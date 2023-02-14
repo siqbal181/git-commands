@@ -106,7 +106,7 @@ find ~ -name "*.txt" -print | grep README
 - Command finds all txt files, but instead of printing them, all filenames will be redirected to grep
 - Grep will only print those filenames that include 'readme'
 
-# regular expressions
+# Regular expressions
 - grep is a regular expression which describes a pattern you are looking for
 - more powerful than wildcards
 
@@ -114,7 +114,7 @@ Example 1:
 find ~/Documents -name "*" -print | grep "\d\+"
 - This command looks for all files in Documents directory that have numbers in the name path
 
-# counting words
+# Counting words
 - What if a file was lots of words or we wanted to check the wordcount
 wc longText.txt (output is 8  492  3003)
 - These show the lines, words and character counts for the txt
@@ -127,7 +127,7 @@ find ~ -name "*.txt" -print | grep README | wc -I
 - grep selects those with readme in their name
 - wc -I will count how many lines were given to it by grep
 
-# permissions
+# Permissions
 
 - control access to every file on computer 
 - some files can be read-only, some can be unavailable to users
@@ -261,3 +261,50 @@ echo $PATH
 NB: Remember when we had to type './hello.rb' to execute the file, instead of just 'hello.rb'
 - This is because if we hadn't explicitly specified that the program was in the current directory, the shell would look in all PATH directories and wouldn't find it there
 - Every program you run from your command line without specifying where the are (ls, date, pwd) are somewhereon the PATH
+
+
+# Setting environment variables
+- So far we have seen how to READ environment variables, but we can also SET them
+export SEASON=winter
+- We have just created a new environment variable called SEASON
+- You can read it's value back
+echo $SEASON
+
+- If we wanted to modify the PATH - we can add one more directory at the end of PATH
+export PATH=$PATH:/Users/makers
+
+
+
+
+
+# Vim
+- Sometimes we won't be able to use vscode
+- Vim is a text editor which has the basics of an editor which you can rely on (but doesn't look as pretty)
+
+- To create a new file or open an existing file, pass it as an argument
+vim myFile
+
+- You will see the empty file with many lines and your file shown at the bottom of the editor
+- You can't type anything, you need to insert your command first
+- Command can be: i - insert text, o - open a new line, dd - delete current line
+- We can choose i which changes the editor into insert mode, and then we can type 
+"Hello world"
+- to SAVE we need to first press the Esc key to escape command mode
+- tell vim to save the file using colon(:) and w (write)
+:w
+- After you press enter you will see your Hello world
+- To Quit editor type :q and then enter
+:q
+
+
+
+
+
+
+
+
+
+
+
+
+
